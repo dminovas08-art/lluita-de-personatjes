@@ -1,4 +1,4 @@
-
+import { Character } from "./Character";
 
 export class Team {
     private _characters: Character[];

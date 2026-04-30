@@ -6,6 +6,7 @@ export class Player {
     constructor(team: Team) {
         this._team = team;
     }
-
-
+    get team(): Team {
+        return this._team;
+    }
 }

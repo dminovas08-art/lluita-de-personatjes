@@ -12,7 +12,9 @@ export class Team {
         return this._characters;
     }
 
-
+    public remove(): void {
+        this._characters = [];
+    }
 
 
 

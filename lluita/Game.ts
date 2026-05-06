@@ -8,7 +8,7 @@ export class Game {
         this._player1 = player1;
         this._player2 = player2;
     }
-
+    
     get player1(): Player {
         return this._player1;
     }

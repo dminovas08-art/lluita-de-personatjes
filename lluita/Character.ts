@@ -19,9 +19,14 @@ export class Character {
     get name(): nom_personatge {
         return this._name;
     }
+    
 
     get health(): number {
         return this._health;
+    }
+
+    set health(newHealth: number) {
+        this._health = newHealth;
     }
 
     get attack(): poder_personatges {
@@ -37,12 +42,14 @@ export class Character {
     }
 
     public TargetAttack(target: Character): void {
-        const damage = this._attack - (target.defense / 2);
-        if (damage > 0) {
-            damage == 1;
+        if (this.attack > 0) {
+            this.attack == 1;
         }
         
-        target._health = this._health - damage;
+        target._health = this._health - this.attack;
+        if (target.health < 0) {
+            target.health = 0;
+        }
     }
     
 

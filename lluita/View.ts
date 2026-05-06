@@ -1,6 +1,6 @@
 import type { Game } from "./Game";
 import type { Team } from "./Team";
-import type { Character } from "./Character";
+import { Character } from "./Character";
 
 export class View {
     private _j1Name: HTMLDivElement;
@@ -23,9 +23,26 @@ export class View {
         this._j2Defens = document.getElementById("j2-defense") as HTMLDivElement;
     }
 
-    public render(game: Game): void {
+    // public render(game: Game): void {
+    //     let player1Charecters: Team = game.player1.team;
+    //     this.renderCharacter(player1Charecters.charecters);
 
-    }
+    //     let player2Charecters: Team = game.player2.team;
+    //     this.renderCharacter(player2Charecters.charecters);
+    // }
 
+    // public renderCharacter(character: Character): HTMLElement{
+    //     const el = document.createElement("div");
+    //     el.classList.add("character");
+    //     el.innerHTML = `
+    //     <div class="card-top-left">${Character.name}</div>
+    //     <div class="card-bottom-left">${Character.health}</div>
+    //     <div class="card-bottom-center">${Character.health}</div>
+    //     <div class="card-bottom-right">${Character.value}</div>
+
+    // `;
+
+    //     return el;
+    // }
 
 }

@@ -8,7 +8,7 @@ export class Character {
     private _defense: poder_personatges;
 
 
-    constructor(name: nom_personatge, health: poder_personatges, attack: poder_personatges, defense: poder_personatges) {
+    constructor(name: nom_personatge, health: number, attack: poder_personatges, defense: poder_personatges) {
         this._name = name;
         this._health = health;
         this._attack = attack;

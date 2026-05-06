@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG Battle Arena</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -16,15 +18,14 @@
         <section class="player-zone" id="player1">
             <h2>Jugador 1</h2>
             <div class="team-container" id="team1">
-                <div class="character-card">
-                    <div class="char-info">
-                        <span class="char-name">Elfo</span>
-                        <span class="char-hp">Vida: 100</span>
+                <div class="j1-card">
+                    <div class="j1-info">
+                        <span id="j1-name"></span>
+                        <span id="j1-hp"></span>
                     </div>
-                    <div class="hp-bar"><div class="hp-fill" style="width: 100%;"></div></div>
                     <div class="stats">
-                        <span>⚔️ 5</span>
-                        <span>🛡️ 3</span>
+                        <span id="j1-attack"></span>
+                        <span id="j1-defense"></span>
                     </div>
                 </div>
             </div>
@@ -35,27 +36,21 @@
         <section class="player-zone" id="player2">
             <h2>Jugador 2</h2>
             <div class="team-container" id="team2">
-                <div class="character-card">
-                    <div class="char-info">
-                        <span class="char-name">Orco</span>
-                        <span class="char-hp">Vida: 120</span>
+                <div class="j2-card">
+                    <div class="j2-info">
+                        <span id="j2-name"></span>
+                        <span id="j2-hp"></span>
                     </div>
-                    <div class="hp-bar"><div class="hp-fill" style="width: 100%;"></div></div>
+
                     <div class="stats">
-                        <span>⚔️ 10</span>
-                        <span>🛡️ 2</span>
+                        <span id="j2-attack"></span>
+                        <span id="j2-defense"></span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="combat-log">
-        <h3>Registre de Combat</h3>
-        <ul id="log-list">
-            <li>La batalla ha començat!</li>
-        </ul>
-    </footer>
-
 </body>
+
 </html>

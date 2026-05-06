@@ -36,6 +36,14 @@ export class Character {
         return this._health > 0;
     }
 
+    public TargetAttack(target: Character): void {
+        const damage = this._attack - (target.defense / 2);
+        if (damage > 0) {
+            damage == 1;
+        }
+        
+        target._health = this._health - damage;
+    }
     
 
 } 

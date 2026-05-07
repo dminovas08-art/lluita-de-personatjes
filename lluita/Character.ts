@@ -19,7 +19,7 @@ export class Character {
     get name(): nom_personatge {
         return this._name;
     }
-    
+
 
     get health(): number {
         return this._health;
@@ -45,12 +45,12 @@ export class Character {
         if (this.attack > 0) {
             this.attack == 1;
         }
-        
+
         target._health = this._health - this.attack;
         if (target.health < 0) {
             target.health = 0;
         }
     }
-    
+
 
 } 

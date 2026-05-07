@@ -31,7 +31,7 @@ export class View {
         const el = document.createElement("div");
         el.classList.add("character");
         el.innerHTML = `
-        <div class="card-top-left">${character.name}</div>
+        <div class="card-top-center">${character.name}</div>
         <div class="card-bottom-left">${character.health}</div>
         <div class="card-bottom-center">${character.defense}</div>
         <div class="card-bottom-right">${character.attack}</div>

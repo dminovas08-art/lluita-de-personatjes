@@ -6,7 +6,6 @@ export class Team {
     private _characters: Character[];
     static characters: any;
 
-
     constructor() {
         this._characters = [];
     }
@@ -24,20 +23,29 @@ export class Team {
         }
     }
 
-
     public addCharacter(character: Character): void {
         this._characters.push(character);
     }
-
 
 
     public remove(): void {
         this._characters = [];
     }
 
+    public shuffle(): void {
+        for (let i = this._characters.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this._characters[i], this._characters[j]] = [this._characters[j], this._characters[i]];
+        }
+    }
 
+    public repartir(): Character | undefined {
+        return this._characters.pop();
+    }
 
-
+    public push(character: Character): void {
+        this._characters.push(character);
+    }
 
 
 

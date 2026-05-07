@@ -20,8 +20,13 @@ export class Character {
         return this._name;
     }
 
+
     get health(): number {
         return this._health;
+    }
+
+    set health(newHealth: number) {
+        this._health = newHealth;
     }
 
     get attack(): poder_personatges {
@@ -36,6 +41,16 @@ export class Character {
         return this._health > 0;
     }
 
-    
+    public TargetAttack(target: Character): void {
+        if (this.attack > 0) {
+            this.attack == 1;
+        }
+
+        target._health = this._health - this.attack;
+        if (target.health < 0) {
+            target.health = 0;
+        }
+    }
+
 
 } 

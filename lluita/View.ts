@@ -3,46 +3,42 @@ import type { Team } from "./Team";
 import { Character } from "./Character";
 
 export class View {
-    private _j1Name: HTMLDivElement;
-    private _j1Heal: HTMLDivElement;
-    private _j1Attack: HTMLDivElement;
-    private _j1Defens: HTMLDivElement;
-    private _j2Name: HTMLDivElement;
-    private _j2Heal: HTMLDivElement;
-    private _j2Attack: HTMLDivElement;
-    private _j2Defens: HTMLDivElement;
+
+    private _divPlayer1: HTMLDivElement;
+    private _divPlayer2: HTMLDivElement;
 
     constructor() {
-        this._j1Name = document.getElementById("j1-name") as HTMLDivElement;
-        this._j1Heal = document.getElementById("j1-hp") as HTMLDivElement;
-        this._j1Attack = document.getElementById("j1-attack") as HTMLDivElement;
-        this._j1Defens = document.getElementById("j1-defense") as HTMLDivElement;
-        this._j2Name = document.getElementById("j2-name") as HTMLDivElement;
-        this._j2Heal = document.getElementById("j2-hp") as HTMLDivElement;
-        this._j2Attack = document.getElementById("j2-attack") as HTMLDivElement;
-        this._j2Defens = document.getElementById("j2-defense") as HTMLDivElement;
+
+        this._divPlayer1 = document.getElementById("player1") as HTMLDivElement;
+        this._divPlayer2 = document.getElementById("player2") as HTMLDivElement;
     }
 
-    // public render(game: Game): void {
-    //     let player1Charecters: Team = game.player1.team;
-    //     this.renderCharacter(player1Charecters.charecters);
+    public render(game: Game): void {
+        this.renderTeam(game.player1.team, this._divPlayer1);
+        this.renderTeam(game.player2.team, this._divPlayer2);
+    }
 
-    //     let player2Charecters: Team = game.player2.team;
-    //     this.renderCharacter(player2Charecters.charecters);
-    // }
+    private renderTeam(team: Team, container: HTMLDivElement): void {
+        container.innerHTML = "";
 
-    // public renderCharacter(character: Character): HTMLElement{
-    //     const el = document.createElement("div");
-    //     el.classList.add("character");
-    //     el.innerHTML = `
-    //     <div class="card-top-left">${Character.name}</div>
-    //     <div class="card-bottom-left">${Character.health}</div>
-    //     <div class="card-bottom-center">${Character.health}</div>
-    //     <div class="card-bottom-right">${Character.value}</div>
+        for (const character of team.characters) {
+            const el = this.renderCharacter(character);
+            container.appendChild(el);
+        }
+    }
 
-    // `;
+    public renderCharacter(character: Character): HTMLElement {
+        const el = document.createElement("div");
+        el.classList.add("character");
+        el.innerHTML = `
+        <div class="card-top-left">${character.name}</div>
+        <div class="card-bottom-left">${character.health}</div>
+        <div class="card-bottom-center">${character.defense}</div>
+        <div class="card-bottom-right">${character.attack}</div>
 
-    //     return el;
-    // }
+    `;
+
+        return el;
+    }
 
 }

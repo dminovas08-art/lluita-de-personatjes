@@ -1,4 +1,3 @@
-import { Character } from "./Character";
 import { Team } from "./Team";
 import { Player } from "./Player";
 import { Game } from "./Game";

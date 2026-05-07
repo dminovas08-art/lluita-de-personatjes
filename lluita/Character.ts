@@ -42,9 +42,7 @@ export class Character {
     }
 
     public TargetAttack(target: Character): void {
-        if (this.attack > 0) {
-            this.attack == 1;
-        }
+        target.health = target.health - this.attack;
 
         target._health = this._health - this.attack;
         if (target.health < 0) {

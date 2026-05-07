@@ -12,23 +12,15 @@ export class Team {
     public generarPersonatges(): void {
         for (const nom of NOM_PERSONATGE) {
             const poderAleatori = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
-            const personatge = new Character(nom, poderAleatori, poderAleatori, poderAleatori)
+            const personatge = new Character(nom, poderAleatori, poderAleatori, poderAleatori);
 
-            this._characters.push(personatge)
+           
+
+            this._characters.push(personatge);
+            
+            console.log(personatge);
         }
     }
-
-    
-
-    public inizialitzarTeam(): void {
-        for (const razes of NOM_PERSONATGE) {
-            for (const numero of PODER_PERSONATGES) {
-                let personatge = new Character(razes, numero, numero, numero);
-                this._characters.push(personatge);
-            }
-        }
-    }
-
 
     public addCharacter(character: Character): void {
         this._characters.push(character);

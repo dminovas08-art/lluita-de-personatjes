@@ -14,7 +14,7 @@ export class Game {
     }
     
     set player1(p : Player ){
-        this.player1 = p;
+        this._player1 = p;
     }
     
     get player2(): Player {
@@ -25,3 +25,4 @@ export class Game {
         this._player2 = p;
     }
 }
+

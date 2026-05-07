@@ -11,9 +11,8 @@ export class Game {
         this._player1 = player1;
         this._player2 = player2;
         this._team = new Team();
-        this._team.inizialitzarTeam();
+        this._team.generarPersonatges();
     }
-
 
     get player1(): Player {
         return this._player1;
@@ -31,6 +30,7 @@ export class Game {
 
         this._player2 = p;
     }
+
     public start(): void {
         this._team.shuffle
     }
@@ -41,3 +41,7 @@ export class Game {
         }
     }
 }
+
+
+
+

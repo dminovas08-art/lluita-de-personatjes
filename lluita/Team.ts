@@ -1,25 +1,27 @@
 import { Character, type nom_personatge, type poder_personatges } from "./Character";
-const nom_personatge: nom_personatge[] = ["Humano", "Elfo", "Enano", "Orco", "Goblin"];
-const poder_personatges: poder_personatges[] = [1, 2, 3, 4, 5, 10]
+const NOM_PERSONATGE: nom_personatge[] = ["Humano", "Elfo", "Enano", "Orco", "Goblin", "Pato"];
+const PODER_PERSONATGES: poder_personatges[] = [1, 2, 3, 4, 5, 6, 10]
 
 export class Team {
-    private _characters: Character[];
-    static characters: any;
 
-    constructor() {
-        this._characters = [];
-    }
+
+    private _characters: Character[] = [];
+
 
     get characters(): Character[] {
         return this._characters;
     }
 
-    public inizialitzarTeam(): void {
-        for (const razes of nom_personatge) {
-            for (const numero of poder_personatges) {
-                let personatge = new Character(razes, numero, numero, numero);
-                this._characters.push(personatge);
-            }
+    public generarPersonatges(): void {
+        for (const nom of NOM_PERSONATGE) {
+            const poderAleatori = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
+            const personatge = new Character(nom, poderAleatori, poderAleatori, poderAleatori);
+
+
+
+            this._characters.push(personatge);
+
+            console.log(personatge);
         }
     }
 

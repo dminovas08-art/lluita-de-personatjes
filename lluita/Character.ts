@@ -1,5 +1,5 @@
-export type nom_personatge = "Humano" | "Elfo" | "Enano" | "Orco" | "Goblin";
-export type poder_personatges = 1 | 2 | 3 | 4 | 5 | 10;
+export type nom_personatge = "Humano" | "Elfo" | "Enano" | "Orco" | "Goblin" | "Pato";
+export type poder_personatges = 1 | 2 | 3 | 4 | 5 | 6 | 10;
 
 export class Character {
     private _name: nom_personatge;
@@ -42,9 +42,7 @@ export class Character {
     }
 
     public TargetAttack(target: Character): void {
-        if (this.attack > 0) {
-            this.attack == 1;
-        }
+        target.health = target.health - this.attack;
 
         target._health = this._health - this.attack;
         if (target.health < 0) {

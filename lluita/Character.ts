@@ -1,5 +1,5 @@
-export type nom_personatge = "Humano" | "Elfo" | "Enano" | "Orco" | "Goblin";
-export type poder_personatges = 1 | 2 | 3 | 4 | 5 | 10;
+export type nom_personatge = "Humano" | "Elfo" | "Enano" | "Orco" | "Goblin" | "Pato";
+export type poder_personatges = 1 | 2 | 3 | 4 | 5 | 6 | 10;
 
 export class Character {
     private _name: nom_personatge;

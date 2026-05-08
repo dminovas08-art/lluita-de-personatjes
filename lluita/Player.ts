@@ -2,19 +2,19 @@ import { Team } from "./Team.ts";
 
 
 export class Player {
-    private _name: String;
+    private _name: string;
     private _team: Team;
 
-    constructor(team: Team, name: String) {
+    constructor(team: Team, name: string) {
         this._team = team;
         this._name = name;
     }
 
-    get name(): String {
+    get name(): string {
         return this._name;
     }
 
-    set name(newName: String) {
+    set name(newName: string) {
         this._name = newName;
     }
 

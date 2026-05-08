@@ -7,10 +7,11 @@ export class Game {
     private _player2: Player;
     private _team: Team;
 
-    constructor(player1: Player, player2: Player) {
-        this._player1 = player1;
-        this._player2 = player2;
+    constructor(player1: string, player2: string) {
         this._team = new Team();
+        this._player1 = new Player(this._team, player1);
+        this._player2 = new Player(this._team, player2);
+
         this._team.generarPersonatges();
     }
 

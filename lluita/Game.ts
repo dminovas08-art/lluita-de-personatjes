@@ -7,7 +7,7 @@ export class Game {
     private _player2: Player;
     private _team: Team;
 
-    constructor(player1: string, player2: string) {
+    constructor(player1: String, player2: String) {
         this._team = new Team();
         this._player1 = new Player(this._team, player1);
         this._player2 = new Player(this._team, player2);
@@ -42,7 +42,7 @@ export class Game {
             player.team.addCharacter(character);
         }
     }
-    
+
     public reparit(): void {
         while (this._team.characters.length > 0) {
             this.reparitCharacters(this._player1);

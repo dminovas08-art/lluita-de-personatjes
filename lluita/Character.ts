@@ -13,7 +13,6 @@ export class Character {
         this._health = health;
         this._attack = attack;
         this._defense = defense;
-
     }
 
     get name(): nom_personatge {

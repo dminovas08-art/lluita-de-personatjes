@@ -19,7 +19,7 @@ export class Team {
 
             this._characters.push(personatge);
 
-            console.log(personatge);
+            
         }
     }
 

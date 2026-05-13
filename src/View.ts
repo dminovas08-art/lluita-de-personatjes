@@ -29,15 +29,17 @@ export class View {
 
     public renderCharacter(character: Character): HTMLElement {
         const el = document.createElement("div");
-        el.classList.add("character");
+        el.classList.add("character-card"); 
         el.innerHTML = `
-        <div class="card-top-center">${character.name}</div>
-        <div class="card-bottom-left">${character.health}</div>
-        <div class="card-bottom-center">${character.defense}</div>
-        <div class="card-bottom-right">${character.attack}</div>
-
+        <div class="char-info">
+            <span>${character.name}</span>
+            <span>HP: ${character.health}</span>
+        </div>
+        <div class="stats">
+            <span>ATK: ${character.attack}</span>
+            <span>DEF: ${character.defense}</span>
+        </div>
     `;
-
         return el;
     }
 

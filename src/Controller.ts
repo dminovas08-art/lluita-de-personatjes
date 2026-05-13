@@ -10,7 +10,7 @@ export class Controller {
         this._view = view;
     }
     public init(): void {
-        this._game.repartirCaracter;
+        this._game.reparit();
         this._view.render(this._game);
     }
 

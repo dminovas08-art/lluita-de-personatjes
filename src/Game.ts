@@ -7,7 +7,7 @@ export class Game {
     private _player2: Player;
     private _team: Team;
 
-    constructor(player1: string, player2: string) {
+    constructor(player1: String, player2: String) {
         this._team = new Team();
         this._team.generarPersonatges();
         this._team.shuffle();
@@ -22,7 +22,7 @@ export class Game {
     }
 
     set player1(p: Player) {
-        this.player1 = p;
+        this._player1 = p;
     }
 
     get player2(): Player {
@@ -34,10 +34,21 @@ export class Game {
         this._player2 = p;
     }
 
+
     public repartirCaracter(player: Player): void {
         let character: Character | undefined = this._team.repartir();
+
         if (character) {
-            player.team.push(character);
+            player.team.addCharacter(character);
+        }
+    }
+
+    public reparit(): void {
+        while (this._team.characters.length > 0) {
+            this.repartirCaracter(this._player1);
+            if (this._team.characters.length > 0) {
+                this.repartirCaracter(this._player2);
+            }
         }
     }
 

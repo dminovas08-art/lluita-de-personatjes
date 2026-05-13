@@ -17,8 +17,6 @@ export class Team {
             const poderAleatori = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
             const personatge = new Character(nom, poderAleatori, poderAleatori, poderAleatori);
 
-
-
             this._characters.push(personatge);
 
             console.log(personatge);
@@ -48,7 +46,4 @@ export class Team {
     public push(character: Character): void {
         this._characters.push(character);
     }
-
-
-
 }

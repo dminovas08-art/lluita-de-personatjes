@@ -9,10 +9,12 @@ export class Game {
 
     constructor(player1: string, player2: string) {
         this._team = new Team();
-        this._player1 = new Player(this._team, player1);
-        this._player2 = new Player(this._team, player2);
-
         this._team.generarPersonatges();
+        this._team.shuffle();
+
+        this._player1 = new Player(new Team(), player1);
+        this._player2 = new Player(new Team(), player2);
+
     }
 
     get player1(): Player {

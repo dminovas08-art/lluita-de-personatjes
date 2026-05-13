@@ -34,14 +34,26 @@ export class Game {
         this._player2 = p;
     }
 
-    public start(): void {
-        this._team.shuffle
-    }
     public repartirCaracter(player: Player): void {
         let character: Character | undefined = this._team.repartir();
         if (character) {
             player.team.push(character);
         }
+    }
+
+
+    public start(): void {
+        this._team.shuffle
+        this.repartirCaracter(this._player1);
+        this.repartirCaracter(this._player2);
+    }
+
+    public restart(): void {
+        this._player1.removeTeam();
+        this._player2.removeTeam();
+        this._team.remove();
+        this._team.generarPersonatges;
+        this.start();
     }
 }
 

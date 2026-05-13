@@ -54,7 +54,7 @@ export class Game {
 
 
     public start(): void {
-        this._team.shuffle
+        this._team.shuffle();
         this.repartirCaracter(this._player1);
         this.repartirCaracter(this._player2);
     }
@@ -63,7 +63,7 @@ export class Game {
         this._player1.removeTeam();
         this._player2.removeTeam();
         this._team.remove();
-        this._team.generarPersonatges;
+        this._team.generarPersonatges();
         this.start();
     }
 }

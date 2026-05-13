@@ -20,6 +20,7 @@ export class View {
 
     private renderTeam(team: Team, container: HTMLDivElement): void {
         container.innerHTML = "";
+        container.classList.add('player-zone', 'team-container');
 
         for (const character of team.characters) {
             const el = this.renderCharacter(character);
@@ -30,10 +31,14 @@ export class View {
     public renderCharacter(character: Character): HTMLElement {
         const el = document.createElement("div");
         el.classList.add("character-card"); 
+        const hpPercent = character.health;
         el.innerHTML = `
         <div class="char-info">
             <span>${character.name}</span>
             <span>HP: ${character.health}</span>
+        </div>
+        <div class="hp-bar">
+            <div class="hp-fill" style="width: 100%"></div>
         </div>
         <div class="stats">
             <span>ATK: ${character.attack}</span>

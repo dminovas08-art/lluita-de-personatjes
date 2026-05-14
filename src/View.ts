@@ -6,11 +6,14 @@ export class View {
 
     private _divPlayer1: HTMLDivElement;
     private _divPlayer2: HTMLDivElement;
+    readonly _attack: HTMLButtonElement;
 
     constructor() {
 
         this._divPlayer1 = document.getElementById("player1") as HTMLDivElement;
         this._divPlayer2 = document.getElementById("player2") as HTMLDivElement;
+        this._attack = document.getElementById("btnAttack") as HTMLButtonElement;
+
     }
 
     public render(game: Game): void {
@@ -30,8 +33,8 @@ export class View {
 
     public renderCharacter(character: Character): HTMLElement {
         const el = document.createElement("div");
-        el.classList.add("character-card"); 
-        const hpPercent = character.health;
+        el.classList.add("character-card");
+
         el.innerHTML = `
         <div class="char-info">
             <span>${character.name}</span>

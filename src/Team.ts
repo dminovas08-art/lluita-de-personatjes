@@ -1,6 +1,6 @@
 import { Character, type nom_personatge, type poder_personatges } from "./Character";
 const NOM_PERSONATGE: nom_personatge[] = ["Humano", "Elfo", "Enano", "Orco", "Goblin", "Pato"];
-const PODER_PERSONATGES: poder_personatges[] = [1, 2, 3, 4, 5, 6, 10]
+const PODER_PERSONATGES: poder_personatges[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export class Team {
 
@@ -14,15 +14,14 @@ export class Team {
 
     public generarPersonatges(): void {
         for (const nom of NOM_PERSONATGE) {
-            const _health = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
+
+            const _vida = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
             const _attack = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
             const _defense = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
 
-            const personatge = new Character(nom, _health, _attack, _defense);            
-        
-            this._characters.push(personatge);
+            const personatge = new Character(nom, _vida, _attack, _defense);
 
-            
+            this._characters.push(personatge);
         }
     }
 

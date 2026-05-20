@@ -55,8 +55,7 @@ export class Game {
 
     public start(): void {
         this._team.shuffle();
-        this.repartirCaracter(this._player1);
-        this.repartirCaracter(this._player2);
+        this.reparit();
     }
 
     public restart(): void {

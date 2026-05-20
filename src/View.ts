@@ -29,23 +29,37 @@ export class View {
     }
 
     public renderCharacter(character: Character): HTMLElement {
+
         const el = document.createElement("div");
-        el.classList.add("character-card"); 
-        const hpPercent = character.health;
+        el.className = `character-card`;
+
+        const iconPath = this.getCharacterIcon(character.name);
+
         el.innerHTML = `
         <div class="char-info">
-            <span>${character.name}</span>
-            <span>HP: ${character.health}</span>
-        </div>
-        <div class="hp-bar">
-            <div class="hp-fill" style="width: 100%"></div>
+        <span class="name-label">${character.name}</span>
+        <span class="hp-count">HP: ${character.health}</span>
+        </div class="character-card">
+        <div>
+        <img src="${iconPath}">
         </div>
         <div class="stats">
-            <span>ATK: ${character.attack}</span>
-            <span>DEF: ${character.defense}</span>
+        <span>⚔️ ${character.attack}</span>
+        <span>🛡️ ${character.defense}</span>
         </div>
-    `;
+        `;
         return el;
     }
 
-}
+    private getCharacterIcon(nom_personatge: string): string {
+        const iconos: Record<string, string> = {
+            'Humano': 'src/assets/img/images.jpg',
+            'Elfo': 'src/assets/img/Elf.jpg',
+            'Enano': 'src/assets/img/DWARF.jpg',
+            'Orco': 'src/assets/img/orko.jpg',
+            'Goblin': 'src/assets/img/piccolo.jpg',
+            'Pato': 'src/assets/img/BREAD.jpg'
+        };
+        return iconos[nom_personatge] || '';
+    }
+} 

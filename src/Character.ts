@@ -24,7 +24,7 @@ export class Character {
         return this._health;
     }
 
-    set health(newHealth: number) {
+    set setHealth(newHealth: number) {
         this._health = newHealth;
     }
 
@@ -35,18 +35,5 @@ export class Character {
     get defense(): poder_personatges {
         return this._defense;
     }
-
-    public comprovarVida(): boolean {
-        return this._health > 0;
-    }
-
-    public TargetAttack(target: Character): void {
-        target.health = target.health - this.attack;
-
-        if (target.health < 0) {
-            target.health = 0;
-        }
-    }
-
 
 } 

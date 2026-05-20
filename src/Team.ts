@@ -49,4 +49,7 @@ export class Team {
     public push(character: Character): void {
         this._characters.push(character);
     }
+    public pop(): Character | undefined {
+        return this._characters.pop();
+    }
 }

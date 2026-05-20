@@ -6,12 +6,12 @@ export class Game {
     private _player1: Player;
     private _player2: Player;
     private _team: Team;
+    private _tornJugador: number = 1;
 
     constructor(player1: String, player2: String) {
         this._team = new Team();
         this._team.generarPersonatges();
         this._team.shuffle();
-
         this._player1 = new Player(new Team(), player1);
         this._player2 = new Player(new Team(), player2);
 
@@ -32,6 +32,13 @@ export class Game {
     set player2(p: Player) {
 
         this._player2 = p;
+    }
+    get tornJugador(): number {
+        return this._tornJugador;
+    }
+
+    set tornJugador(t: number) {
+        this._tornJugador = t;
     }
 
 
@@ -66,7 +73,3 @@ export class Game {
         this.start();
     }
 }
-
-
-
-

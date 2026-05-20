@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG Battle Arena</title>
-    <link rel="stylesheet" href="src/Style.css">
+    <link rel="stylesheet" href="src/style.css">
 </head>
-
-
 <body>
-
     <header>
         <h1>RPG Battle Arena</h1>
     </header>
 
     <main id="game-container">
+        <section class="player-zone">
+            <h2>Jugador 1</h2>
+            <div id="player1" class="team-container"></div>
+        </section>
 
-        <h2>Jugador 1</h2>
-        <div id="player1"></div>
+        <div class="center-controls">
+            <div class="vs-divider">VS</div>
+            <button id="btnAttack" class="btn-attack">Atacar</button>
+        </div>
 
-
-        <div class="vs-divider">VS</div>
-        <button id="btnAttack" class="btn btn-hit">Atacar</button>
-
-
-
-        <div id="player2"></div>
-        <h2>Jugador 2</h2>
-
-
+        <section class="player-zone">
+            <h2>Jugador 2</h2>
+            <div id="player2" class="team-container"></div>
+        </section>
     </main>
+
     <script type="module" src="/src/main.ts"></script>
 </body>
-
 </html>

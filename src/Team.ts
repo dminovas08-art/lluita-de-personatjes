@@ -43,13 +43,13 @@ export class Team {
     }
 
     public repartir(): Character | undefined {
-        return this._characters.pop();
+        return this._characters.shift();
     }
 
     public push(character: Character): void {
         this._characters.push(character);
     }
-    public pop(): Character | undefined {
-        return this._characters.pop();
+    public shift(): Character | undefined {
+        return this._characters.shift();
     }
 }

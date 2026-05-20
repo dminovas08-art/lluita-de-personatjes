@@ -14,12 +14,12 @@ export class Team {
 
     public generarPersonatges(): void {
         for (const nom of NOM_PERSONATGE) {
+
             const _vida = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
             const _attack = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
             const _defense = PODER_PERSONATGES[Math.floor(Math.random() * PODER_PERSONATGES.length)];
 
-            const personatge = new Character(nom, _vida, _attack, _defense);
-
+            const personatge = new Character(nom, _vida, _attack, _defense);        
             this._characters.push(personatge);
 
 

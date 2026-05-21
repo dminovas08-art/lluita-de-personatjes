@@ -7,17 +7,23 @@ export class View {
     private _divPlayer1: HTMLDivElement;
     private _divPlayer2: HTMLDivElement;
     readonly _attack: HTMLButtonElement;
-
+    private missatge: HTMLDivElement;
+    readonly _btnReset: HTMLButtonElement;
     constructor() {
 
         this._divPlayer1 = document.getElementById("player1") as HTMLDivElement;
         this._divPlayer2 = document.getElementById("player2") as HTMLDivElement;
         this._attack = document.getElementById("btnAttack") as HTMLButtonElement;
+        this.missatge = document.getElementById("missatge") as HTMLDivElement;
+        this._btnReset = document.getElementById("btnReset") as HTMLButtonElement;
     }
 
     public render(game: Game): void {
         this.renderTeam(game.player1.team, this._divPlayer1);
         this.renderTeam(game.player2.team, this._divPlayer2);
+        if (this.missatge) {
+            this.missatge.innerText = game.victoria ? game.victoria : "";
+        }
     }
 
     private renderTeam(team: Team, container: HTMLDivElement): void {

@@ -17,10 +17,21 @@ export class Controller {
     private bindEvent(): void {
 
         this._view._attack.addEventListener("click", () => this.fightCharacter());
+        this._view._btnReset.addEventListener("click", () => this.resetGame());
 
     }
 
+    private resetGame(): void {
+        this._game.victoria = null;
+        this._game.restart();
+        this._view.render(this._game);
+    }
+
     private fightCharacter(): void {
+
+        if (this._game.victoria) {
+            return;
+        }
 
         const lluitadorJugador1 = this._game.player1.team.characters[0];
         const lluitadorJugador2 = this._game.player2.team.characters[0];
@@ -43,6 +54,12 @@ export class Controller {
         }
 
         this.estaViu();
+
+        if (this._game.player1.team.characters.length === 0) {
+            this._game.victoria = "jugador 2 ha guanyat";
+        } else if (this._game.player2.team.characters.length === 0) {
+            this._game.victoria = "jugador 1 ha guanyat";
+        }
 
         // Canvi de torn
         this._game.tornJugador = this._game.tornJugador === 1 ? 2 : 1;

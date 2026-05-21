@@ -7,6 +7,7 @@ export class Game {
     private _player2: Player;
     private _team: Team;
     private _tornJugador: number = 1;
+    private _victoria: string | null = null;
 
     constructor(player1: String, player2: String) {
         this._team = new Team();
@@ -14,7 +15,15 @@ export class Game {
         this._team.shuffle();
         this._player1 = new Player(new Team(), player1);
         this._player2 = new Player(new Team(), player2);
+        
 
+    }
+
+    get victoria(): string | null {
+        return this._victoria;
+    }
+    set victoria(victoria: string | null) {
+        this._victoria = victoria;
     }
 
     get player1(): Player {
